@@ -1,6 +1,8 @@
 # Banner Timer
 Chrome extension that shows how much time you are wasting on a website.
 
+![example](./bannerimg.png)
+
 ## Installation
 1. Clone this repository to your computer
 2. Load the extension in Chrome:
