@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Banner Timer",
+  "version": "1.0",
+  "description": "Adds a banner with a timer to specific websites.",
+  "permissions": ["storage", "activeTab"],
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
