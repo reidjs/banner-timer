@@ -55,8 +55,8 @@ chrome.storage.sync.get("urls", (data) => {
     // Append close button to banner
     banner.appendChild(closeButton);
 
-    // Initialize the timer
-    let timeElapsed = 0;
+    let timeElapsed = parseInt(localStorage.getItem("elapsedTime")) || 0;
+
     const updateTimer = () => {
       const minutes = Math.floor(timeElapsed / 60);
       const seconds = timeElapsed % 60;
@@ -65,6 +65,7 @@ chrome.storage.sync.get("urls", (data) => {
       }${seconds}`;
       banner.appendChild(closeButton); // Re-attach the close button
       timeElapsed++;
+      localStorage.setItem("elapsedTime", timeElapsed);
       setTimeout(updateTimer, 1000);
     };
 
