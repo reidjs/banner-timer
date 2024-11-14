@@ -1,7 +1,8 @@
 chrome.storage.sync.get("urls", (data) => {
-  const urls = data.urls || [];
+  const urls = data.urls.filter((str) => str !== "") || [];
   const currentUrl = window.location.href;
 
+  console.log("urls", urls);
   // Check if the current URL matches any configured URLs
   if (urls.some((url) => currentUrl.includes(url))) {
     // Create the banner element
